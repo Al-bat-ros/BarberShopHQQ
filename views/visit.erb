@@ -1,24 +1,48 @@
 <p> Хотите подстричься ?</p>
 
-<form>
+<form action="/visit" method="POST" role="form">
   <div class="form-group">
-    <label>Name</label>
-    <input type="name" class="form-control" id="name" placeholder="Enter Name">
+    <label>Ваше имя</label>
+    <input name="user_name" type="name" class="form-control" id="name" placeholder="Введите ваше имя">
   </div>
+
   <div class="form-group">
-    <label>Phone</label>
-    <input type="phone" class="form-control" id="phone" placeholder="Enter Phone">
+    <label>Ваш телефон</label>
+    <input name="namber_phone" type="phone" class="form-control" id="phone" placeholder="Введите ваш номер телевона">
   </div>
+
   <div class="form-group">
-    <label>Date of visit</label>
-    <input type="data" class="form-control" id="data" placeholder="Enter Data">
+    <label>Время визита</label>
+    <input name="data_time" type="data" class="form-control" id="data" placeholder="Введите время визита">
   </div>
-  <select class="form-control">
+
+  <div class="form-group">
+    <label>Цвет краски</label>
+    <select id="color" name="color" >
+       <option value="#7bd148">Green</option>
+       <option value="#5484ed">Bold blue</option>
+       <option value="#a4bdfc">Blue</option>
+       <option value="#46d6db">Turquoise</option>
+       <option value="#7ae7bf">Light green</option>
+       <option value="#51b749">Bold green</option>
+       <option value="#fbd75b">Yellow</option>
+       <option value="#ffb878">Orange</option>
+       <option value="#ff887c">Red</option>
+       <option value="#dc2127">Bold red</option>
+       <option value="#dbadff">Purple</option>
+       <option value="#e1e1e1">Gray</option>
+    </select>
+  </div>
+
+  <label>Ваш парикмахер</label>
+  
+  <p><select name="barber" required>
     <option>1</option>
     <option>2</option>
     <option>3</option>
     <option>4</option>
     <option>5</option>
-  </select>
+  </select></p>
+
   <button type="submit" class="btn btn-primary">Записаться</button>
 </form>
