@@ -3,11 +3,14 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'sinatra/activerecord'
 
+#устанавливаем БД
 set :database, "sqlite3:barbershop.db"
 
+#создаем модель 
 class Client < ActiveRecord::Base
 end
 
+#создаем модель                     
 class Barber < ActiveRecord::Base
 end
 
@@ -27,20 +30,25 @@ end
 
 post '/visit' do
 
-  @barber = params[:barber]
-  @username = params[:user_name]
-  @namber_phone = params[:namber_phone]
-  @data_time = params[:data_time]
-  @color = params[:color]
+#сохранение в БД продвинутым способом
+c = Client.new params[:client]
+c.save
 
+  #сохранение в БД ламерским способом
+#  @barber = params[:barber]
+#  @username = params[:user_name]
+#  @namber_phone = params[:namber_phone]
+#  @data_time = params[:data_time]
+#  @color = params[:color]
 
-  c = Client.new
-  c.name = @username
-  c.phone = @namber_phone
-  c.datestamp = @data_time
-  c.barber = @barber
-  c.color = @color
-  c.save
+  #сохранение в БД ламерским способом
+#  c = Client.new
+#  c.name = @username
+#  c.phone = @namber_phone
+#  c.datestamp = @data_time
+#  c.barber = @barber
+#  c.color = @color
+#  c.save
 
 
   erb "<h1>Спасибо, вы записаны</h1>"

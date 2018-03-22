@@ -3,22 +3,22 @@
 <form action="/visit" method="POST" role="form">
   <div class="form-group">
     <label>Ваше имя</label>
-    <input name="user_name" type="name" class="form-control" id="name" placeholder="Введите ваше имя">
+    <input name="client[name]" type="text" class="form-control" id="name" placeholder="Введите ваше имя" value="">
   </div>
 
   <div class="form-group">
     <label>Ваш телефон</label>
-    <input name="namber_phone" type="phone" class="form-control" id="phone" placeholder="Введите ваш номер телевона">
+    <input name="client[phone]" type="text" class="form-control" id="phone" placeholder="Введите ваш номер телевона" value="">
   </div>
 
   <div class="form-group">
     <label>Время визита</label>
-    <input name="data_time" type="data" class="form-control" id="data" placeholder="Введите время визита">
+    <input name="client[datestamp]" type="text" class="form-control" id="data" placeholder="Введите время визита" value="">
   </div>
 
   <div class="form-group">
     <label>Цвет краски</label>
-    <select id="color" name="color" >
+    <select id="color" name="client[color]" >
        <option value="#7bd148">Green</option>
        <option value="#5484ed">Bold blue</option>
        <option value="#a4bdfc">Blue</option>
@@ -34,29 +34,20 @@
     </select>
   </div>
 
-  <div class="form-group">
-  <label>Ваш парикмахер</label>
-  
-   <select name="barber" required>
+ <!-- <div class="form-group">
+    <label>Ваш парикмахер</label>
+      <select name="barber" required>
 
-    <!--
-       <option>1</option>
-       <option>2</option>
-       <option>3</option>
-       <option>4</option>
-       <option>5</option> 
-  -->
-
-      <% @barbers.each do |item| %>
-        <option 
+        <% @barbers.each do |item| %>
+          <option 
           
-          <%= @barber == item['name'] ? 'selected' : '' %>><%= item['name'] %>
+            <%= @barber == item['name'] ? 'selected' : '' %>><%= item['name'] %>
             
-        </option>
-      <%end%>
-      
-    </select>
-  </div>
+          </option>
+        <%end%>
+
+      </select>
+  </div> -->
 
   <button type="submit" class="btn btn-primary">Записаться</button>
 </form>
