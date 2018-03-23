@@ -30,9 +30,12 @@ end
 
 post '/visit' do
 
-#сохранение в БД продвинутым способом
-c = Client.new params[:client]
-c.save
+#сохранение в БД продвинутым способом № 1
+ Client.create params[:client] 
+
+#сохранение в БД продвинутым способом № 2
+#c = Client.new params[:client]
+#c.save
 
   #сохранение в БД ламерским способом
 #  @barber = params[:barber]
