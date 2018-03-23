@@ -8,6 +8,11 @@ set :database, "sqlite3:barbershop.db"
 
 #создаем модель 
 class Client < ActiveRecord::Base
+  #валидация
+  validates :name, presence: true
+  validates :phone, presence: true
+  validates :datestamp, presence: true
+  validates :color, presence: true
 end
 
 #создаем модель                     
@@ -31,11 +36,11 @@ end
 post '/visit' do
 
 #сохранение в БД продвинутым способом № 1
- Client.create params[:client] 
+# Client.create params[:client] 
 
 #сохранение в БД продвинутым способом № 2
-#c = Client.new params[:client]
-#c.save
+c = Client.new params[:client]
+c.save
 
   #сохранение в БД ламерским способом
 #  @barber = params[:barber]
