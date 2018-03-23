@@ -9,7 +9,7 @@ set :database, "sqlite3:barbershop.db"
 #создаем модель 
 class Client < ActiveRecord::Base
   #валидация
-  validates :name, presence: true
+  validates :name, presence: true, length: { minimum: 3 }
   validates :phone, presence: true
   validates :datestamp, presence: true
   validates :color, presence: true
