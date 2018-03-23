@@ -44,7 +44,8 @@ c = Client.new params[:client]
 if c.save
   erb "<h1>Спасибо, вы записаны</h1>"
 else
-  erb "<h1>Ошибка</h1>"
+  @error = c.errors.full_messages.first
+  erb :visit
 end
 
   #сохранение в БД ламерским способом
