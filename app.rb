@@ -66,3 +66,7 @@ end
 #  c.save
 
 end
+
+get '/barber/:id' do
+  erb :barber
+end
